@@ -1,4 +1,3 @@
 this the new line changed and previous line out to new line::
-total win 
-ne:w
+total::w
 this is file_2
