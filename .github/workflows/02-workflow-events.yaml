@@ -26,5 +26,7 @@ jobs:
       - name: Run
         run: |
           pg_lsclusters
-          sudo nano /var/log/postgresql/postgresql-16-main.log
+          sudo chmod -R 0700 /var/lib/postgresql/16/main
+          sudo pg_ctlcluster 10 main start
+          pg_lsclusters
 
