@@ -27,6 +27,6 @@ jobs:
         run: |
           pg_lsclusters
           sudo chmod -R 0700 /var/lib/postgresql/16/main
-          sudo pg_ctlcluster 10 main start
+          sudo pg_ctlcluster 16 main start
           pg_lsclusters
 
