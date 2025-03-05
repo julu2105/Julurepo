@@ -2,7 +2,7 @@ name: '01 - Building Blocks'
 
 on: 
   - workflow_dispatch
-    push
+  - push
 
 jobs:
   echo-hello:
