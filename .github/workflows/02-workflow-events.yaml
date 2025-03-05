@@ -10,5 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show the trigger
-        run: echo ${{github.event_name}}
+        run: |
+          echo ${{github.event_name}}
+          echo $user
+          echo whoami
 
