@@ -25,6 +25,6 @@ jobs:
     steps:
       - name: Run
         run: |
-          sh psql -U postgres
-          sh Password for user postgres: psql
+          psql -U postgres
+          Password for user postgres: psql
 
