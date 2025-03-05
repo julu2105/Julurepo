@@ -24,5 +24,7 @@ jobs:
           - 5432:5432
     steps:
       - name: Run
-        run: echo "Event name ${{github.event_name}}"
+        run: |
+          sh psql -U postgres
+          sh Password for user postgres: psql
 
