@@ -16,5 +16,8 @@ jobs:
     steps:
       - name: 'Failed step'
         run: |
+          echo "I am"
+          echo "a multi-line"
+          echo "script."
           exit 1
 
