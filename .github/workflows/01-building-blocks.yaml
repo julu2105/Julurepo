@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Say Hello'
-        run: |
-          echo "Hello, World!"
+        run: echo "Hello, World!"
       
       
      
@@ -17,6 +16,5 @@ jobs:
     steps:
       - name: 'Failed step'
         run: |
-          echo "I am"
-          echo "a multi-line"
-          echo "script."
+          exit 1
+
