@@ -9,7 +9,7 @@ jobs:
       - name: Say Hello
         run: |
           echo "Hello, World!"
-          exit 1
+
       
       
      
@@ -21,6 +21,7 @@ jobs:
           echo "I am"
           echo "a multi-line"
           echo "script."
+          exit 1
       - name : Good Bye
         run: echo "Good Bye"
 
