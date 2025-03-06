@@ -21,7 +21,7 @@ jobs:
     steps:
       - name: check
         run: |
-          pg_ctlcluster start
+          ps -ef | grep postgres
 
 
 
