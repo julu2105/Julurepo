@@ -1,27 +1,14 @@
-name: '02 - Workflow Events'
+name: PostgreSQL for GitHub Actions
 
-on:
-  - workflow_dispatch
+on: push
+
+
 jobs:
   build:
-    name: Build and Test
     runs-on: ubuntu-latest
-    services:
-      postgres:
-        image: postgres:15
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-        ports:
-          # Maps tcp port 5432 on service container to the host
-          - 5432:5432
     steps:
-      - name: Run
-        run: |
-          pg_lsclusters
-
+      - uses: azure/postgresql@v1
+        with:
+          server-name: POSTGRESQL_SERVER_NAME
+          connection-string: postgres.postgres.database.azure.com;Database=postgres;Port=5432;User Id=postgres;Password=postgres;Ssl Mode=Require;
+          plsql-file: './data.sql'
