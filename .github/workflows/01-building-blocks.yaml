@@ -44,4 +44,4 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run:
-          psql -U postgres -d test_db -f /home/runner/work/Julurepo/Julurepo/learn.sql
+          psql -U postgres -d test_db -f ./home/runner/work/Julurepo/Julurepo/learn.sql
