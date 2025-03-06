@@ -34,9 +34,7 @@ jobs:
           POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-        run: |
-          psql -U postgres -d test_db -c "SELECT * from information_schema.tables"
-          find learn.sql
+        run: readlink -f learn.sql
 
         
       - name: Run tests
