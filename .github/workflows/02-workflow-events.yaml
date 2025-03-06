@@ -21,14 +21,7 @@ jobs:
     steps:
       - name: check
         run: |
-          pg_ctl start
+          pg_ctlcluster start
 
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: azure/postgresql@v1
-        with:
-          server-name: POSTGRESQL_SERVER_NAME
-          connection-string: postgres.postgres.database.azure.com;Database=postgres;Port=5432;User Id=postgres;Password=postgres;Ssl Mode=Require;
-          plsql-file: './data.sql'
+
