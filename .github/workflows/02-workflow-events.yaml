@@ -21,8 +21,7 @@ jobs:
     steps:
       - name: check
         run: |
-          pg_lsclusters
-          netstat -plunt |grep postgres
+          sudo netstat -plunt |grep postgres
 
 
   build:
