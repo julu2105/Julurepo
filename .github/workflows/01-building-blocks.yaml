@@ -24,8 +24,10 @@ jobs:
           --health-timeout 5s
           --health-retries 5
 
-
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Run the query in DB
         env:
           PGHOST: localhost
