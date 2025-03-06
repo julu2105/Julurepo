@@ -1,9 +1,25 @@
 name: PostgreSQL for GitHub Actions
 
 on: push
-
-
 jobs:
+  ready_install_pg:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          # Maps tcp port 5432 on service container to the host
+          - 5432:5432
+
+
   build:
     runs-on: ubuntu-latest
     steps:
