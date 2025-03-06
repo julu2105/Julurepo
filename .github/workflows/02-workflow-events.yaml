@@ -3,17 +3,15 @@ name: '02 - Workflow Events'
 on:
   - workflow_dispatch
 jobs:
-  echo:
+  build:
+    name: Build and Test
     runs-on: ubuntu-latest
     services:
-      # Label used to access the service container
       postgres:
-        # Docker Hub image
-        image: postgres
-        # Provide the password for postgres
+        image: postgres:15
         env:
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-        # Set health checks to wait until postgres has started
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -25,9 +23,5 @@ jobs:
     steps:
       - name: Run
         run: |
-          pg_lsclusters
-          sudo chmod -R 0700 /var/lib/postgresql/16/main
-          sudo -i -u postgres
-          postgres@abc:~$ /usr/lib/postgresql/16/bin/pg_ctl restart -D /var/lib/postgresql/16/main
           pg_lsclusters
 
