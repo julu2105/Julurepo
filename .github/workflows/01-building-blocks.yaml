@@ -32,7 +32,8 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run: 
-          select * from information_schema
+          psql -U postgres -d test_db -c "SELECT * from information_schema.tables"
+
         
       - name: Run tests
         env:
@@ -41,4 +42,4 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run:
-          select * from information_schema
+          psql -U postgres -d test_db -c "SELECT * from information_schema.tables"
