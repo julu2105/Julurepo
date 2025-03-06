@@ -1,3 +1,8 @@
+name: psql
+
+on: workflow_dispatch
+
+
 jobs:
   # Label of the runner job
   runner-job:
