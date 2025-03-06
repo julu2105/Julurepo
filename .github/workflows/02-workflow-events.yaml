@@ -22,7 +22,7 @@ jobs:
       - name: check
         run: |
           pg_lsclusters
-          sudo netstat -plunt |grep postgres
+          netstat -plunt |grep postgres
 
 
   build:
