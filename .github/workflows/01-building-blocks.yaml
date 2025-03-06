@@ -43,4 +43,4 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run:
-          psql -U postgres -d test_db -c "SELECT * from information_schema.tables"
+          psql -U postgres -d test_db -f learn.sql
