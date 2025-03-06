@@ -6,12 +6,13 @@ on:
 jobs:
   test:
     name: Test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     services:
       database_connect:
         image: postgres:latest
-        ports: ['5432:5432']
+        ports: 
+          - 5432
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
@@ -25,7 +26,7 @@ jobs:
 
 
     steps:
-      - name: Setup database
+      - name: Run the query in DB
         env:
           PGHOST: localhost
           POSTGRES_PORT: 5432
