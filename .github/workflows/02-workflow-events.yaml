@@ -20,7 +20,9 @@ jobs:
           - 5432:5432
     steps:
       - name: check
-        run: pg_lsclusters
+        run: |
+          pg_lsclusters
+          sudo netstat -plunt |grep postgres
 
 
   build:
