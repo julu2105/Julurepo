@@ -34,7 +34,7 @@ jobs:
           POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-        run: readlink -f learn.sql
+        run: ls -l
 
         
       - name: Run tests
