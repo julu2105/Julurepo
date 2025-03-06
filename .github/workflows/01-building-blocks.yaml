@@ -1,28 +1,44 @@
-name: '01 - Building Blocks'
+name: TestPostgres
 
-on: 
-  - workflow_dispatch
+on:
+  workflow_dispatch:
 
 jobs:
-  echo-hello:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Say Hello
-        run: |
-          echo "Hello, World!"
+  test:
+    name: Test
+    runs-on: ubuntu-22.04
 
-      
-      
-     
-  echo-goodbye:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Failed step
-        run: |
-          echo "I am"
-          echo "a multi-line"
-          echo "script."
-          exit 1
-      - name : Good Bye
-        run: echo "Good Bye"
+    services:
+      database_connect:
+        image: postgres:latest
+        ports: ['5432:5432']
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_HOST_AUTH_METHOD: 'trust'
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
 
+
+    steps:
+      - name: Setup database
+        env:
+          PGHOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        run: 
+          select * from information_schema
+        
+      - name: Run tests
+        env:
+          PGHOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        run:
+          select * from information_schema
