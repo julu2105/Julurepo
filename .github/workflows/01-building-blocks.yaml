@@ -28,7 +28,7 @@ jobs:
     steps:
       - name: Run the query in DB
         env:
-          PGHOST: postgres
+          PGHOST: localhost
           POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
