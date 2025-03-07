@@ -4,9 +4,10 @@ CREATE TABLE cars (
   year INT
 );
 
-INSERT INTO cars (brand,model,year) 
-  VALUES( 'BMW','M4',2008
-'MERCEDES','A5',2009
-'AUDI','R8',2002);
+INSERT INTO cars (brand, model, year)
+VALUES
+  ('Volvo', 'p1800', 1968),
+  ('BMW', 'M1', 1978),
+  ('Toyota', 'Celica', 1975);
 
 select * from cars;
