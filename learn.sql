@@ -10,4 +10,3 @@ VALUES
   ('BMW', 'M1', 1978),
   ('Toyota', 'Celica', 1975);
 
-select * from cars;
