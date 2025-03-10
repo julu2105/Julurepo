@@ -9,15 +9,9 @@ on:
         default: new name overwritten
 
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
-env:
-  MY_WORKFLOW_VAR: workflow
-  MY_OVERWRITTEN_VAR: workflow
 jobs:
  echo-data:
    runs-on: ubuntu-latest
-   env:
-     MY_JOB_VAR: job
-     MY_OVERWRITTEN_VAR: job
      
    steps:
      - name: Display Information
@@ -35,6 +29,7 @@ jobs:
      - name: Print Env Variables
        env:
          MY_OVERWRITTEN_VAR: step
+         MY_WORKFLOW_VAR: workslow
        run: |
         echo "Workflow env: ${{env.MY_WORKFLOW_VAR}}"
         echo "Overwritten env: ${{env.MY_OVERWRITTEN_VAR}}"
