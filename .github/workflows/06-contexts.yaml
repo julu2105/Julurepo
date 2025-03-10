@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
     inputs:
       debug:
-        type: boolean
-        default: false
+        type: string
+        default: new name overwritten
 
 run-name: 06 - Contexts | DEBUG - ${{ inputs.debug }}
 
