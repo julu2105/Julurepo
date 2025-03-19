@@ -1,3 +1,3 @@
-mode.sql
-files.sql
-trevor.sql
+./mode.sql
+./files.sql
+./trevor.sql
