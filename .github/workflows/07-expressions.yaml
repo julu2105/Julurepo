@@ -1,1 +1,31 @@
 name: 07 - Using Expressions
+
+on: 
+  push:
+  workflow_dispatch:
+    inputs:
+      name: debug
+      type: boolean
+      default: False
+      
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: [debug] Print start-up data
+        if: ${{inputs.debug}} == True
+        run: |
+        echo "Triggered by: <retrieve the event name here>"
+        echo "Branch: <retrieve the ref here>"
+        echo "Commit SHA: <retrieve the commit sha here>"
+        echo "Runner OS: <retrieve the runner os here>"
+        
+      - name: [debug] Print when triggered from main
+        if: ${{inputs.debug}} == True && ${{github.branch}} == "main"
+        run: echo "I was triggered from main"
+      
+      - name: Greeting
+        run: echo "Hello, world"
+      
+    
+
