@@ -4,7 +4,7 @@ on:
   push:
   workflow_dispatch:
     inputs:
-      name: debug
+      debug:
       type: boolean
       default: False
       
