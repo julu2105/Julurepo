@@ -27,7 +27,6 @@ jobs:
           echo "Overwritten: ${{env.OVERWRITTEN}}"
       - name: Overwrite Job Variable
 
-        run: |
-          env:
-            OVERWRITTEN: I have been overwritten at the step level        
-          echo "Step env var: $OVERWRITTEN"
+        run: |       
+          echo  "OVERWRITTEN=overwritten at step" >> $GITHUB_ENV
+          echo $OVERWRITTEN
