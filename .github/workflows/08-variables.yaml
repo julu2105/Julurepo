@@ -29,7 +29,7 @@ jobs:
       - name: Overwrite Job Variable
 
         run: |       
-          echo  "echo OVERWRITTEN= $(echo overwritten at step)" >> $GITHUB_ENV
+          echo  "echo OVERWRITTEN=$(echo overwritten at step)" >> $GITHUB_ENV
           echo $OVERWRITTEN
   echo2:
     runs-on: ubuntu-latest
@@ -40,7 +40,7 @@ jobs:
 
   echo-prod:
     runs-on: ubuntu-latest
-    environment: prod
+    environment: staging
     steps:
       - name: Print Prod Variables
         run: |
