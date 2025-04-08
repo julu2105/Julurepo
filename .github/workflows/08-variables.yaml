@@ -36,6 +36,9 @@ jobs:
         run: |       
           echo  "echo OVERWRITTEN=$(echo overwritten at step)" >> $GITHUB_ENV
           echo $OVERWRITTEN
+      - name: output
+        run: |
+          echo $OVERWRITTEN
   echo2:
     runs-on: ubuntu-latest
     steps: 
