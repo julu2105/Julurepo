@@ -34,7 +34,7 @@ jobs:
           echo $OVERWRITTEN
       - name: output
         run: |
-          echo $OVERWRITTEN
+          echo $MY_VARIABLE
   echo2:
     runs-on: ubuntu-latest
     steps: 
