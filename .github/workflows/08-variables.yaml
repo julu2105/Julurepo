@@ -30,8 +30,7 @@ jobs:
       - name: Overwrite Job Variable
 
         run: |       
-          echo  "echo OVERWRITTEN=echo overwritten at step" >> $GITHUB_ENV
-          echo $OVERWRITTEN
+          echo "MY_VARIABLE=HelloWorld" >> $GITHUB_ENV          echo $OVERWRITTEN
       - name: output
         run: |
           echo $OVERWRITTEN
