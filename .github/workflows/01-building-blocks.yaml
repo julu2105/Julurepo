@@ -44,7 +44,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run: |
-          psql -U postgres -d test_db -f ./mode.sql > output.log 2>&1
+          psql -U postgres -d test_db -f ./mode.sql |  tee output.log
       - name: Run files
         env:
           PGHOST: localhost
