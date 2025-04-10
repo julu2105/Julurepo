@@ -46,5 +46,6 @@ jobs:
         run: |
           psql -U postgres -d test_db -f ./learn.sql > output.log 2>&1
       - name: Output File
-        run: | cat output.log
+        run: | 
+          cat output.log
         
