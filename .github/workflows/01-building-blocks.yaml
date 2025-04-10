@@ -37,16 +37,26 @@ jobs:
         run: pwd
 
         
-      - name: Run tests
+      - name: Run mode
+        id: mode        env:
+          PGHOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        run: |
+          psql -U postgres -d test_db -f ./mode.sql > output.log 2>&1
+      - name: Run files
         env:
           PGHOST: localhost
           POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run: |
-          psql -U postgres -d test_db -f ./learn.sql > output.log 2>&1
+          psql -U postgres -d test_db -f ./trevor.sql > output1.log 2>&1
+          
       - name: Output File
         run: |
           ls -l
           cat output.log
+          cat output1.log
         
