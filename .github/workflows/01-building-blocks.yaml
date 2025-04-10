@@ -49,5 +49,5 @@ jobs:
       - name: Output File
         run: |
           ls -l
-          cat output.log
+          cat output/output.log
         
