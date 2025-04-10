@@ -62,7 +62,7 @@ jobs:
           POSTGRES_PASSWORD: postgres
         run: |
           psql -U postgres -d test_db -f ./learn.sql |  tee -a ./output/output2.log           
-          cd output/
+          cd ./output/
           ls -l
       - name: Output File
         run: |
