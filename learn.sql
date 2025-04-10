@@ -1,3 +1,1 @@
-./mode.sql
-./files.sql
-./trevor.sql
+SELECT * FROM contacts;
