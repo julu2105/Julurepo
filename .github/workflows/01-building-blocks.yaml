@@ -45,9 +45,28 @@ jobs:
           POSTGRES_PASSWORD: postgres
         run: |
           psql -U postgres -d test_db -f ./mode.sql |  tee -a ./output/output.log
+
+      - name: Run trevor       
+        env:
+          PGHOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        run: |
+          psql -U postgres -d test_db -f ./trevor.sql |  tee -a ./output/output1.log
+      - name: Run learn       
+        env:
+          PGHOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        run: |
+          psql -U postgres -d test_db -f ./learn.sql |  tee -a ./output/output2.log           
           
       - name: Output File
         run: |
           ls -l
           cat ./output/output.log
+          cat ./output/output1.log
+          cat ./output/output2.log 
         
