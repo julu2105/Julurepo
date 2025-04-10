@@ -44,7 +44,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
         run: |
-          psql -U postgres -d test_db -f ./mode.sql |  tee output.log
+          psql -U postgres -d test_db -f ./mode.sql |  tee -a output/output.log
           
       - name: Output File
         run: |
