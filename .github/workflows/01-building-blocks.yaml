@@ -37,8 +37,8 @@ jobs:
         run: pwd
 
         
-      - name: Run mode
-        id: mode        env:
+      - name: Run mode       
+        env:
           PGHOST: localhost
           POSTGRES_PORT: 5432
           POSTGRES_USER: postgres
