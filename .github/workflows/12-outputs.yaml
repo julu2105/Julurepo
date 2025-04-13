@@ -16,11 +16,15 @@ jobs:
       - name: Print GITHUB_OUTPUT path
         run: |
           echo $GITHUB_OUTPUT
+          echo $GITHUB_ENV
+          echo "Hero=Hanuman" >> $GITHUB_ENV
         
       - name: Build
         id: Build
         run: |
           echo $GITHUB_OUTPUT
+          echo $GITHUB_ENV
+          echo $Hero
           echo "status=${{inputs.build-status}}" >> $GITHUB_OUTPUT
           
 
