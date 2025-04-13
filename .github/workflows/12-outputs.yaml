@@ -10,6 +10,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      build-status: ${{steps.Build.outputs.status}}
     steps:
       - name: Print GITHUB_OUTPUT path
         run: |
@@ -19,8 +21,7 @@ jobs:
         id: Build
         run: |
           echo "status=${{inputs.build-status}}" >> $$GITHUB_OUTPUT
-        outputs:
-          build-status: ${{steps.Build.outputs.status}}
+
           
           
             
