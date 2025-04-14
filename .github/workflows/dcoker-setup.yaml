@@ -13,4 +13,4 @@ jobs:
 
       - name: avialable docker ver
         run: |
-          apt-cache madison docker-ce | awk '{ print $3 }'
+          docker --version
