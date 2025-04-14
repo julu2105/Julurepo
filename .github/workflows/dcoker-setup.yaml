@@ -30,3 +30,9 @@ jobs:
         run: |  
           docker --version
           sudo docker run hello-world
+      - name: Create Docker Group and add user
+        run: |  
+          sudo groupadd docker
+          echo $USER
+          sudo usermod -aG docker $USER
+          
