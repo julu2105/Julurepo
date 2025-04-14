@@ -40,3 +40,6 @@ jobs:
           docker pull nginx
           docker run -d -p 8080:80 --name web-server nginx 
           docker ps
+      - name: curl into webserver to get response          
+        run: |
+          curl http://localhost:8080
