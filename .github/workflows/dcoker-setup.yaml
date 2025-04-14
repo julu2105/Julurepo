@@ -38,5 +38,5 @@ jobs:
       - name: Install nginx
         run: |
           docker pull nginx
-          docker run -d nginx | docker kill
+          docker run -d -p 8080:80 --names web-server nginx 
           docker ps
