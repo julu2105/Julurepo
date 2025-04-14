@@ -35,3 +35,6 @@ jobs:
           echo $USER
           sudo usermod -aG docker $USER
           docker run hello-world
+      - name: Install nginx
+        run: |
+          docker pull nginx
