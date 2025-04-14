@@ -43,3 +43,9 @@ jobs:
       - name: curl into webserver to get response          
         run: |
           curl http://localhost:8080
+      - name: stop container          
+        run: |
+          docker stop web-server
+          docker stop blissful_brattain
+          docker stop priceless_feistel
+          docker ps
