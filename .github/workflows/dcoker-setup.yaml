@@ -9,4 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Docker
-        uses: docker/setup-docker-action@v4  
+        uses: docker/setup-docker-action@v4
+
+      - name: avialable docker ver
+        run: |
+          apt-cache madison docker-ce | awk '{ print $3 }'
