@@ -38,3 +38,5 @@ jobs:
       - name: Install nginx
         run: |
           docker pull nginx
+          docker run -d nginx
+          docker ps
