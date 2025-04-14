@@ -1,0 +1,12 @@
+name: 13-docker-setup
+
+on: 
+  workflow_dispatch
+
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Docker
+        uses: docker/setup-docker-action@v4  
