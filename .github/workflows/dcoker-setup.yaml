@@ -39,6 +39,7 @@ jobs:
         run: |
           docker pull nginx:1.27.0
           docker images
-          docker run -d --name web_server nginx
+          docker run -d --name web_server 900dca2a61f5
           docker ps -q
-          docker exec  web_server echo "Hello World"
+          docker exec  web_server sudo apt install vim
+          docker exec  web_server ls ~
