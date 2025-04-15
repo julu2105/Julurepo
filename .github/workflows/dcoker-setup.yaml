@@ -41,4 +41,4 @@ jobs:
           docker images
           docker run -d --name web_server 900dca2a61f5
           docker ps -q
-          docker exec  web_server ls ~
+          docker exec  web_server ls -a
