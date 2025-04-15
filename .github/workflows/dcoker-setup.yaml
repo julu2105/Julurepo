@@ -50,5 +50,15 @@ jobs:
           curl http://localHost:8080
           docker login -u ${{ USR_DCK }} -p ${ DOCKER_PAT }}
           docker search ubuntu
+          docker images
+          docker rmi $(docker images -q)
+          docker pull --a hello-world
+          docker images
+          docker run hello-world
+          docker pull ubuntu:latest
+          echo "FROM ubuntu:latest" >> Dockerfile
+          echo 'CMD ["echo", "This is my first docker image"]' >> Dockerfile
+          docker build -t v1_Hello_World .
+          docker images
 
           
