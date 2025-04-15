@@ -43,3 +43,4 @@ jobs:
           docker ps -q
           docker exec  web_server apt-get update
           docker exec  web_server apt-get -y install vim
+          docker exec  web_server cat /usr/share/nginx/html/index.html
