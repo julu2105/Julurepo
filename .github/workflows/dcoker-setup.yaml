@@ -37,15 +37,5 @@ jobs:
           docker run hello-world
       - name: Install nginx
         run: |
-          docker pull nginx
-          docker run -d -p 8080:80 --name web-server nginx 
-          docker ps
-      - name: curl into webserver to get response          
-        run: |
-          curl http://localhost:8080
-      - name: stop container          
-        run: |
-          docker stop web-server
-          docker stop blissful_brattain
-          docker stop priceless_feistel
-          docker ps
+          docker pull nginx:1.27.0
+          docker images
