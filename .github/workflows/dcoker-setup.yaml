@@ -41,6 +41,7 @@ jobs:
           docker images
           docker run -d -p 8080:80 --name web_server nginx:1.27.0
           docker ps -q
+          docker ps --filter name=web_server
           docker exec  web_server apt-get update
           docker exec  web_server apt-get -y install vim
           docker exec  web_server cat /usr/share/nginx/html/index.html
@@ -48,5 +49,6 @@ jobs:
         run: |
           curl http://localHost:8080
           docker login -u ${{ USR_DCK }} -p ${ DOCKER_PAT }}
+          docker search ubuntu
 
           
