@@ -47,7 +47,6 @@ jobs:
           docker exec  web_server cat /usr/share/nginx/html/index.html
       - name: curl into local Host
         run: |
-          curl http://localHost:8080
           docker login -u ${{ secrets.USR_DCK }} -p ${ secrets.DOCKER_PAT }}
           docker search ubuntu
           docker images
