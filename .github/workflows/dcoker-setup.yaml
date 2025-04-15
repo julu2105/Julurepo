@@ -41,5 +41,5 @@ jobs:
           docker images
           docker run -d --name web_server nginx
           docker ps -q
-          docker exec -it $(doker ps -q)
+          docker exec -it web_server
           echo "Hello World"
