@@ -41,6 +41,4 @@ jobs:
           docker images
           docker run -d --name web_server nginx
           docker ps -q
-          docker exec -t web_server /bin/bash
-          echo "Hello World"
-          exit
+          docker exec -t web_server /bin/bash echo "Hello World"
