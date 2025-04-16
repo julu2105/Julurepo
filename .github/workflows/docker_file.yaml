@@ -28,7 +28,7 @@ jobs:
           docker images
           docker build -t julu:v1 ./.github/workflows/
           docker images
-          docker image push julu:v1
+          docker image push julu2459/julu:v1
           
         
      
