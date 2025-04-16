@@ -31,7 +31,7 @@ jobs:
           docker images
           dockerr tag  julu:v1 julu:v2
           docker images
-          docker push
+          docker image push julu:v1
           
         
      
