@@ -27,7 +27,7 @@ jobs:
     steps:
       - name: docker create image from docker file
         run: |
-          docker build -t julu:v1 .
+          docker build -t julu:v1 ./Julurepo/.github/workflows/
           docker images
           dockerr tag  julu:v1 julu:v2
           docker images
