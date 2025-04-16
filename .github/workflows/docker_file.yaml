@@ -26,8 +26,9 @@ jobs:
         run: |
           docker build -t julu:v1 ./.github/workflows/
           docker images
-          docker tag  julu:v1 julu:v2
+          docker build -t julu:v1 ./.github/workflows/
           docker images
+          docker image push julu:v1
           
         
      
