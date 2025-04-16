@@ -24,9 +24,9 @@ jobs:
 
       - name: docker create image from docker file
         run: |
-          docker build -t julu:v1 ./.github/workflows/
+          docker build -t julu2459/julu:v1 ./.github/workflows/
           docker images
-          docker build -t julu:v1 ./.github/workflows/
+          docker build -t julu2459/julu:v1 ./.github/workflows/
           docker images
           docker image push julu2459/julu:v1
           
