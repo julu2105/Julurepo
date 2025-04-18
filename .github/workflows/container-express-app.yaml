@@ -15,6 +15,7 @@ jobs:
           apt-get install jq
       - name: create dir
         run: |
+          cd container-express-app
           npm init -y
           ls
           cat package.json
