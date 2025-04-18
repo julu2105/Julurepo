@@ -27,10 +27,9 @@ jobs:
       - name: change json key
         run: |
           jq '.' package.json
-          cd ./.github/workflows
-          jq '.scripts.start' = "node index.js"
-          cp ../../index.js ./container-express-app
-          cd ../../container-express-app
+          jq '.scripts.start' = "node index.js" ./.github/workflows/package.json
+          cp ./.github/workflows/index.js ./container-express-app
+          cd container-express-app
           ls
           npm start
           curl http://localhost:3000
