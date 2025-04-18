@@ -8,3 +8,7 @@ app.use.(body-parser.json());
 app.get('/',(req, res) => {
   res.send('Hello World');
 });
+
+app.listen(port , () => {
+console.log(`Server Listening on port ${port}`);
+});
