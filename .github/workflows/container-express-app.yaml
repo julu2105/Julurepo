@@ -27,6 +27,7 @@ jobs:
       - name: change json key
         run: |
           chmod a+x ./container-express-app/package.json
+          ls ./container-express-app/
           jq '.scripts | keys' = "start" ./container-express-app/package.json
           jq '.scripts.start' = "node index.js" ./container-express-app/package.json
           cp ./.github/workflows/index.js ./container-express-app
