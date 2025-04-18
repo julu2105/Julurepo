@@ -7,8 +7,6 @@ jobs:
   checkout:
     runs-on : ubuntu-latest
     steps:
-      - name: checkout Repo
-        uses: actions/checkout@v4
       - name: install node.js
         run: |
           mkdir container-express-app
@@ -24,12 +22,14 @@ jobs:
           npm install express@4.19.2 body-parser@1.20.2 --save-exact
           ls
           cat package.json
+      - name: checkout Repo
+        uses: actions/checkout@v4    
       - name: change json key
         run: |
           pwd
           ls -al
-          jq '.scripts | keys' = "start" package.json
-          jq '.scripts.start' = "node index.js" package.json
+          jq '.scripts | keys' = "start" ./container-express-app/package.json
+          jq '.scripts.start' = "node index.js" ./container-express-apppackage.json
           cp ./.github/workflows/index.js ./container-express-app
           cd container-express-app
           ls
