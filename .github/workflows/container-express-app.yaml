@@ -26,7 +26,8 @@ jobs:
           cat package.json
       - name: change json key
         run: |
-          cd ./container-express-app
+          pwd
+          ls -al
           jq '.scripts | keys' = "start" package.json
           jq '.scripts.start' = "node index.js" package.json
           cp ./.github/workflows/index.js ./container-express-app
