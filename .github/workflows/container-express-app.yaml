@@ -12,7 +12,7 @@ jobs:
       - name: install node.js
         run: |
           mkdir container-express-app
-          apt-get install jq
+          sudo apt-get install jq
       - name: create dir
         run: |
           cd container-express-app
