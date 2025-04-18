@@ -13,10 +13,12 @@ jobs:
       - name: checkout Repo
         uses: actions/checkout@v4
       - name: install node.js
-        run: npm install -g npm
-      - name: create dir
         run: |
           mkdir container-express-app
+          npm install mkdir container-express-app
+          apt-get install jq
+      - name: create dir
+        run: |
           npm init -y
           ls
           cat package.json
@@ -25,3 +27,15 @@ jobs:
           npm install express@4.19.2 body-parser@1.20.2 --save-exact
           ls
           cat package.json
+      - name: change json key
+        run: |
+          jq '.' package.json
+          cd ./.github/workflows
+          jq '.scripts.start' = "node index.js"
+          cp ../../index.js ./container-express-app
+          cd ../../container-express-app
+          ls
+          npm start
+          
+
+      
