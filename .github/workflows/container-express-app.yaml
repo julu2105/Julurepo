@@ -36,6 +36,7 @@ jobs:
           cd ../../container-express-app
           ls
           npm start
+          curl http://localhost:3000
           
 
       
