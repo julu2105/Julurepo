@@ -2,9 +2,6 @@ name: COntainerApp
 
 on:
   workflow_dispatch
-defaults:
-  run:
-    working-directory: container-express-app  
 
 jobs:
   checkout:
