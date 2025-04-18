@@ -1,0 +1,27 @@
+name: COntainerApp
+
+on:
+  workflow_dispatch
+defaults:
+  run:
+    working-directory: container-express-app  
+
+jobs:
+  checkout:
+    runs-on : ubuntu-latest
+    steps:
+      - name: checkout Repo
+        uses: actions/checkout@v4
+      - name: install node.js
+        run: npm install -g npm
+      - name: create dir
+        run: |
+          mkdir container-express-app
+          npm init -y
+          ls
+          cat package.json
+      - name : install parser and express
+        run: |
+          npm install express@4.19.2 body-parser@1.20.2 --save-exact
+          ls
+          cat package.json
