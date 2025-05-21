@@ -16,6 +16,23 @@ jobs:
    steps:
      - name: Display Information
        run: |
+        json_payload=echo -e '{"applicationId": "22AE",\n
+          "category": "Service call failed for job",\n
+          "cogs": [],\n
+          "content": "scheduler service call failed for job",\n
+          "emailData": {
+            "content": "Error failedAssignments: jobs",
+            "locale": "en_US",
+            "subject": "Service call failed."
+        },\n
+          "expiryDays": "100",
+          "groups": [],
+          "others": {
+            "key": "string"
+        },\n
+          "referenceUrl": "",\n
+          "users": ["aakash.bhattacharya@nielseniq.com", "ismail.iqbalsultan@nielseniq.com", "lokesh.raj@nielseniq.com", "vijayyogesh.k@nielseniq.com"]}'
+         echo $json_payload
          echo "Event name: ${{github.event_name}}"
          echo "Ref: ${{github.ref}}"
          echo "SHA name: ${{github.sha}}"
