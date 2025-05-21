@@ -16,8 +16,8 @@ jobs:
    steps:
      - name: Display Information
        run: |
-        json_payload=echo '{"applicationId": "22AE",
-          "category": "Service call failed for job"}'         
+        json_payload=$(echo '{"applicationId": "22AE",
+          "category": "Service call failed for job"}')         
          echo $json_payload
          echo "Event name: ${{github.event_name}}"
          echo "Ref: ${{github.ref}}"
