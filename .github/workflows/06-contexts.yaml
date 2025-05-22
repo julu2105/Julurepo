@@ -57,7 +57,24 @@ jobs:
          MY_OVERWRITTEN_VAR: step
          MY_WORKFLOW_VAR: workslow
        run: |
-        echo "Workflow env: $MY_WORKFLOW_VAR"
-        echo "Overwritten env: $MY_OVERWRITTEN_VAR"
-        echo "Workflow env: ${{env.MY_JOB_VAR}}"
+        echo "[ 
+        applicationId: "22",
+        category: "Service call failed for ${env}",
+        cogs: [],
+        content: "scheduler service call failed for ${env}",
+        emailData: [
+            content: "Error failedAssignments: ${failedAssignments}",
+            locale: "en_US",
+            subject: "Service call failed."
+        ],
+        expiryDays: "100",
+        groups: [],
+        others: [
+            key: "string"
+        ],
+        referenceUrl: "",
+        users: ["no"]]" > file.json
+        jq -r '.' file.json > file1.json
+        cat file1.json
+        
          
