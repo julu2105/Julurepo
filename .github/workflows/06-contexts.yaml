@@ -16,6 +16,7 @@ jobs:
    steps:
      - name: Display Information
        run: |
+         apt-get install jq
          echo -e '{"applicationId": "22AE",\n"category": "Service call failed for job"}'       
          echo "Event name: ${{github.event_name}}"
          echo "Ref: ${{github.ref}}"
@@ -27,7 +28,20 @@ jobs:
          expr 123456 + 7890
      - name: Retrieve Variable
        run: |
-        echo ${{vars.MY_VAR}}
+        payload=$(jq -n '{ emptyArray: [],
+                 user: {
+                   name: "John Doe",
+                   address: {
+                     street: "123 Main St",
+                     city: "Springfield"
+                    },
+                 hobbies: ["reading"],
+                 projects:{
+        name: "Project Alpha",
+        status: "completed"}
+        }')
+        echo $payload
+        
      - name: Print Env Variables
        env:
          MY_OVERWRITTEN_VAR: step
