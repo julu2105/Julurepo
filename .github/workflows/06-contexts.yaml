@@ -28,21 +28,29 @@ jobs:
          expr 123456 + 7890
      - name: Retrieve Variable
        run: |
-        payload=$(jq -n '{ emptyArray: [],
-                 user: {
-                   name: "John Doe",
-                   address: {
-                     street: "123 Main St",
-                     city: "Springfield"
-                    },
-                 hobbies: ["reading"],
-                 projects:{
-        name: "Project Alpha",
-        status: "completed"
-        }
-        }'
-        )
-        echo $payload
+        payload=$(jq -n '{
+          emptyArray: [],
+          user: {
+          name: "John Doe",
+          address: {
+            street: "123 Main St",
+            city: "Springfield"
+            },
+          hobbies: ["reading", "cycling", "gaming"],
+          projects: [
+          {
+            name: "Project Alpha",
+            status: "completed"
+          },
+          {
+            name: "Project Beta",
+            status: "in progress"
+           }
+          ]
+         }
+        }')
+
+        echo "$payload"
         
      - name: Print Env Variables
        env:
