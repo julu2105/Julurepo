@@ -38,8 +38,10 @@ jobs:
                  hobbies: ["reading"],
                  projects:{
         name: "Project Alpha",
-        status: "completed"}
-        }')
+        status: "completed"
+        }
+        }'
+        )
         echo $payload
         
      - name: Print Env Variables
