@@ -16,7 +16,7 @@ jobs:
    steps:
      - name: Display Information
        run: |
-         apt-get install jq
+         sudo apt-get install jq
          echo -e '{"applicationId": "22AE",\n"category": "Service call failed for job"}'       
          echo "Event name: ${{github.event_name}}"
          echo "Ref: ${{github.ref}}"
