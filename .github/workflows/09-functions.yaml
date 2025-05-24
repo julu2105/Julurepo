@@ -12,7 +12,7 @@ jobs:
       - name: Failing step
         id: failstep
         run: |
-          exit 1 
+          exit 0
 
       - name: I will execute
         id: successstep
