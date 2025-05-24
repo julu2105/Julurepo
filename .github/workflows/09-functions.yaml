@@ -12,11 +12,10 @@ jobs:
       - name: Failing step
         id: failstep
         run: |
-          exit 1
+          exit 0
   echo2:
     runs-on: ubuntu-lates
     needs: echo1
-    if: always()
     steps:
       - name: I will execute
         if: ${{ !cancelled() }}
