@@ -12,21 +12,16 @@ jobs:
       - name: Failing step
         id: failstep
         run: |
-          exit 1
-  echo2:
-    runs-on: ubuntu-latest
-    needs: echo1
-    if: always()
-    steps:
+          exit 1 
+
       - name: I will execute
+        id: successstep
         if: ${{ !cancelled() }}
         run: |
           echo "I will always print, except when the workflow is cancelled."
           echo "${{ needs.echo1.result }}"
-  echo3:
-    runs-on: ubuntu-latest
-    needs: [echo1,echo2]
-    steps:
+
       - name: I will execute when cancelled
+        if: ${{ failure() && steps.failstep.conclusion == 'failure' || steps.successstep.conclusion == 'failure' }}
         run: |
           echo "execite"
