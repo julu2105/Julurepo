@@ -14,7 +14,7 @@ jobs:
         run: |
           exit 0
   echo2:
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     needs: echo1
     steps:
       - name: I will execute
