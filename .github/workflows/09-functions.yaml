@@ -19,7 +19,8 @@ jobs:
         if: ${{ !cancelled() }}
         run: |
           echo "I will always print, except when the workflow is cancelled."
-          echo "${{ needs.echo1.result }}"
+          exit 1
+          
 
       - name: I will execute when cancelled
         if: ${{ failure() && steps.failstep.conclusion == 'failure' || steps.successstep.conclusion == 'failure' }}
