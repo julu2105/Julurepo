@@ -1,6 +1,13 @@
 name: 09 - Using Functions
 
 on: 
+  schedule:
+    - cron: '30 06 * * *'
+    - cron: '40 06 * * *'
+    - cron: '50 06 * * *'
+    - cron: '00 07 * * *'
+    - cron: '10 07 * * *'
+    - cron: '20 07 * * *' 
   pull_request:
   workflow_dispatch:
   
